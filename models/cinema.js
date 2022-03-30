@@ -54,5 +54,12 @@ Cinema.prototype.findByYear = function(year){
   return result;
 }
 
+Cinema.prototype.filmsByProperty = function(searchProperty, searchValue){
+  const result = this.films.filter((film) => {
+    return searchProperty === searchValue;
+  });
+  return result;
+};
+
 module.exports = Cinema;
 
