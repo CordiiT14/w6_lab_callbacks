@@ -23,13 +23,13 @@ Cinema.prototype.findByGenre = function(genre){
   return result;
 } 
 
-Cinema.prototype.findByYear = function(year){
-  const result = this.films.filter((film) =>{
-  return film.year === year;
-
+Cinema.prototype.filmsOfYearExist = function(year){
+  const result = this.films.some((film) => {
+     return film.year == year;
   });
-  return result;
+  return result
 }
+
 
 Cinema.prototype.checkLengthOfFilm = function(length){
   const result = this.films.filter((film) =>{
@@ -44,5 +44,15 @@ Cinema.prototype.lengthOfAllFilms = function(){
   }, 0);
   return total;
 };
+
+//extention-
+Cinema.prototype.findByYear = function(year){
+  const result = this.films.filter((film) =>{
+  return film.year === year;
+
+  });
+  return result;
+}
+
 module.exports = Cinema;
 

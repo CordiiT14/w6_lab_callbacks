@@ -47,13 +47,13 @@ describe('Cinema', function () {
   });
   it('should be able to check whether there are some films from a particular year', function(){
     const year = 2017;
-    const actual = cinema.findByYear(year);
-    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting]);
+    const actual = cinema.filmsOfYearExist(year);
+    assert.strictEqual(actual, true);
   });
   it('should be able to check whether there are no films from a particular year', function(){
     const year = 2022;
-    const actual = cinema.findByYear(year);
-    assert.deepStrictEqual(actual, []);
+    const actual = cinema.filmsOfYearExist(year);
+    assert.strictEqual(actual, false);
 
   });
   it('should be able to check whether all films are over a particular length', function(){
@@ -67,4 +67,10 @@ describe('Cinema', function () {
     assert.strictEqual(actual , 622);
   });
 
+  //extension--
+  it('Cinema should be able to filter films by year', function(){
+    const year = 2017;
+    const actual = cinema.findByYear(year);
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting]);
+  })
 });
