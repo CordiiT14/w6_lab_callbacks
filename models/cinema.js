@@ -38,5 +38,11 @@ Cinema.prototype.checkLengthOfFilm = function(length){
   return result;
 };
 
+Cinema.prototype.lengthOfAllFilms = function(){
+  const total = this.films.reduce((totalTime, film) => {
+      return totalTime + film.length;
+  }, 0);
+  return total;
+};
 module.exports = Cinema;
 
