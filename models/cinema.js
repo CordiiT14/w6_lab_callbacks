@@ -23,5 +23,20 @@ Cinema.prototype.findByGenre = function(genre){
   return result;
 } 
 
+Cinema.prototype.findByYear = function(year){
+  const result = this.films.filter((film) =>{
+  return film.year === year;
+
+  });
+  return result;
+}
+
+Cinema.prototype.checkLengthOfFilm = function(length){
+  const result = this.films.filter((film) =>{
+    return film.length >= length;
+  });
+  return result;
+};
+
 module.exports = Cinema;
 
